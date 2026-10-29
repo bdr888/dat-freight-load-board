@@ -249,7 +249,6 @@ export default function LoadBoard() {
               onClick={clearFilters}
               variant="ghost"
               size="lg"
-              className="focus-visible:border-foreground focus-visible:ring-foreground/40"
             >
               <X className="size-4" aria-hidden="true" />
               Clear filters
@@ -288,7 +287,6 @@ export default function LoadBoard() {
                           onClick={header.column.getToggleSortingHandler()}
                           variant="ghost"
                           size="xs"
-                          className="focus-visible:border-foreground focus-visible:ring-foreground/40"
                         >
                           <table.FlexRender header={header} />
                           {sortDirection === 'asc' ? (
@@ -390,7 +388,7 @@ export default function LoadBoard() {
                 aria-label="Previous page"
                 variant="outline"
                 size="icon"
-                className="border-slate-500 focus-visible:border-foreground focus-visible:ring-foreground/40"
+                className="border-slate-500"
               >
                 <ChevronLeft className="size-4" aria-hidden="true" />
               </Button>
@@ -401,7 +399,7 @@ export default function LoadBoard() {
                 aria-label="Next page"
                 variant="outline"
                 size="icon"
-                className="border-slate-500 focus-visible:border-foreground focus-visible:ring-foreground/40"
+                className="border-slate-500"
               >
                 <ChevronRight className="size-4" aria-hidden="true" />
               </Button>
