@@ -84,15 +84,11 @@ const columns = columnHelper.columns([
   }),
   columnHelper.accessor('origin', {
     header: 'Origin',
-    cell: (context) => (
-      <span className="whitespace-nowrap">{context.getValue()}</span>
-    ),
+    cell: (context) => context.getValue(),
   }),
   columnHelper.accessor('destination', {
     header: 'Destination',
-    cell: (context) => (
-      <span className="whitespace-nowrap">{context.getValue()}</span>
-    ),
+    cell: (context) => context.getValue(),
   }),
   columnHelper.accessor('weight', {
     header: 'Weight',
@@ -257,12 +253,12 @@ export default function LoadBoard() {
         </div>
 
         {/* Table */}
-        <Table className="min-w-[1050px] border-collapse text-left">
+        <Table>
           <caption className="sr-only">
             Freight loads with their pickup details, rate, distance, and
             availability.
           </caption>
-          <TableHeader className="bg-slate-50 text-xs font-semibold tracking-wide text-slate-500 uppercase">
+          <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -279,7 +275,6 @@ export default function LoadBoard() {
                             ? 'descending'
                             : 'none'
                       }
-                      className="whitespace-nowrap px-4 py-3.5 first:pl-5 last:pr-5"
                     >
                       {header.isPlaceholder ? null : header.column.getCanSort() ? (
                         <Button
@@ -312,18 +307,12 @@ export default function LoadBoard() {
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody className="divide-y divide-slate-100">
+          <TableBody>
             {rows.length > 0 ? (
               rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  className="transition-colors hover:bg-slate-50/80"
-                >
+                <TableRow key={row.id}>
                   {row.getAllCells().map((cell) => (
-                    <TableCell
-                      key={cell.id}
-                      className="whitespace-nowrap px-4 py-4 text-slate-700 first:pl-5 last:pr-5"
-                    >
+                    <TableCell key={cell.id}>
                       <table.FlexRender cell={cell} />
                     </TableCell>
                   ))}
@@ -331,10 +320,7 @@ export default function LoadBoard() {
               ))
             ) : (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="px-6 py-16 text-center"
-                >
+                <TableCell variant="empty" colSpan={columns.length}>
                   <p className="font-semibold text-slate-900">
                     No loads match your filters
                   </p>
