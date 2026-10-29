@@ -7,6 +7,7 @@ import {
   Search,
   X,
 } from 'lucide-react'
+import Page from '../components/Page'
 import {
   columnFilteringFeature,
   createColumnHelper,
@@ -184,22 +185,11 @@ export default function LoadBoard() {
   }
 
   return (
-    <section className="space-y-6" aria-labelledby="load-board-title">
-      <header className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-        <div>
-          <p className="text-sm font-semibold tracking-wide text-blue-700">
-            DAT FREIGHT MARKETPLACE
-          </p>
-          <h1
-            id="load-board-title"
-            className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
-          >
-            Load board
-          </h1>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-            Browse and compare freight opportunities across the network.
-          </p>
-        </div>
+    <Page
+      eyebrow="DAT FREIGHT MARKETPLACE"
+      title="Load board"
+      description="Browse and compare freight opportunities across the network."
+      headerContent={
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-700 shadow-sm">
           <span
             className="size-2 rounded-full bg-emerald-500"
@@ -207,8 +197,8 @@ export default function LoadBoard() {
           />
           {loadData.length} loads posted
         </div>
-      </header>
-
+      }
+    >
       {/* Search and filter controls */}
       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="flex flex-col gap-3 border-b border-slate-200 p-4 sm:flex-row sm:items-center sm:p-5">
@@ -425,6 +415,6 @@ export default function LoadBoard() {
           </div>
         </footer>
       </div>
-    </section>
+    </Page>
   )
 }
