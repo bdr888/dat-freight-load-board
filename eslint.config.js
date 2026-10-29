@@ -23,6 +23,12 @@ export default defineConfig([
       reactDom.configs.recommended,
       eslintConfigPrettier,
     ],
+    rules: {
+      'react-refresh/only-export-components': [
+        'error',
+        { allowExportNames: ['buttonVariants'] },
+      ],
+    },
     languageOptions: {
       globals: globals.browser,
     },

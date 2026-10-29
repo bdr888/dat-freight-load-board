@@ -1,13 +1,13 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 const defaultStates = [
-  "default",
-  "hover",
-  "focus",
-  "active",
-  "disabled",
+  'default',
+  'hover',
+  'focus',
+  'active',
+  'disabled',
 ] as const
 
 export function StateMatrix<Row extends string>({
@@ -22,7 +22,7 @@ export function StateMatrix<Row extends string>({
   className?: string
 }) {
   return (
-    <div className={cn("w-full overflow-x-auto", className)}>
+    <div className={cn('w-full overflow-x-auto', className)}>
       <table className="w-full border-separate border-spacing-x-2 border-spacing-y-3">
         <thead>
           <tr>
@@ -56,17 +56,4 @@ export function StateMatrix<Row extends string>({
       </table>
     </div>
   )
-}
-
-// Spread onto a component to pin a state without interaction.
-export function previewState(state: string) {
-  if (state === "disabled") {
-    return { disabled: true }
-  }
-
-  if (["hover", "focus", "active"].includes(state)) {
-    return { "data-preview": state }
-  }
-
-  return {}
 }
