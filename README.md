@@ -35,7 +35,7 @@ Build a web application for logistics coordinators to manage freight shipments. 
 2. Setup instructions
 3. Brief document explaining your architecture decisions (add to `src/spec` folder)
 
->  AI assistance is allowed and expected - we want to see how you work with modern tools.
+> AI assistance is allowed and expected - we want to see how you work with modern tools.
 
 ---
 

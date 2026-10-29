@@ -1,13 +1,13 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 // Resolves any CSS color (hex, rgb, oklch, color-mix) to sRGB by painting one pixel.
 // Translucent colors are composited over the backdrop, as the browser would.
-function toRgb(color: string, backdrop = "#fff") {
-  const canvas = document.createElement("canvas")
+function toRgb(color: string, backdrop = '#fff') {
+  const canvas = document.createElement('canvas')
   canvas.width = canvas.height = 1
-  const context = canvas.getContext("2d", { willReadFrequently: true })
+  const context = canvas.getContext('2d', { willReadFrequently: true })
   if (!context) {
     return null
   }
@@ -20,7 +20,7 @@ function toRgb(color: string, backdrop = "#fff") {
 }
 
 function toHex(rgb: number[]) {
-  return `#${rgb.map((value) => value.toString(16).padStart(2, "0")).join("")}`
+  return `#${rgb.map((value) => value.toString(16).padStart(2, '0')).join('')}`
 }
 
 function luminance([r, g, b]: number[]) {
@@ -79,19 +79,19 @@ export function ColorPair({
   }, [])
 
   const level = !info
-    ? ""
+    ? ''
     : info.ratio >= 7
-      ? "AAA"
+      ? 'AAA'
       : info.ratio >= 4.5
-        ? "AA"
+        ? 'AA'
         : info.ratio >= 3
-          ? "AA Large"
-          : "Fail"
+          ? 'AA Large'
+          : 'Fail'
 
   return (
     <div
       className={cn(
-        "flex flex-col overflow-hidden rounded-xl border",
+        'flex flex-col overflow-hidden rounded-xl border',
         className
       )}
     >
