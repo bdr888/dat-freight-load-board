@@ -1,5 +1,16 @@
 # Freight Load Board Application
 
+## Local Setup
+
+Prerequisite: Node.js 20.19+ or 22.12+.
+
+```sh
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite (by default, http://localhost:5173).
+
 ## Business Context
 
 Build a web application for logistics coordinators to manage freight shipments. Dispatchers need to quickly find and assign available loads to drivers throughout their day.
