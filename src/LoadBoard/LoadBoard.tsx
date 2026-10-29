@@ -230,10 +230,7 @@ export default function LoadBoard() {
                 statusColumn?.setFilterValue(value ?? undefined)
               }
             >
-              <SelectTrigger
-                id="status-filter"
-                className="h-10 min-w-36 border-slate-500 bg-white"
-              >
+              <SelectTrigger id="status-filter">
                 <SelectValue placeholder="All statuses" />
               </SelectTrigger>
               <SelectContent>
@@ -370,10 +367,7 @@ export default function LoadBoard() {
                   if (value !== null) table.setPageSize(Number(value))
                 }}
               >
-                <SelectTrigger
-                  id="page-size"
-                  className="border-slate-500 bg-white"
-                >
+                <SelectTrigger id="page-size">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
